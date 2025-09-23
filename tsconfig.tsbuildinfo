@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/commands/hello/index.ts","./src/commands/hello/world.ts"],"version":"5.9.2"}
+{"root":["./src/index.ts","./src/commands/iss.ts","./src/commands/brewery/list.ts","./src/commands/hello/index.ts","./src/commands/hello/world.ts","./src/components/brewery-table.tsx","./src/components/iss.tsx"],"version":"5.9.2"}

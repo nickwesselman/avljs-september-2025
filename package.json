@@ -12,7 +12,8 @@
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
     "ink": "^6.3.0",
-    "react": "^19.1.1"
+    "react": "^19.1.1",
+    "react-devtools-core": "^6.1.5"
   },
   "devDependencies": {
     "@eslint/compat": "^1",
