@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {Text} from 'ink'
+import {Text, render} from 'ink'
 
 const IssPosition = () => {
     const [position, setPosition] = useState([0,0])
@@ -37,4 +37,8 @@ const IssPosition = () => {
     )
 }
 
-export { IssPosition }
+const renderIss = () => {
+    render(<IssPosition />)
+}
+
+export { renderIss }
