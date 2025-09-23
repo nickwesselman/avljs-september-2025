@@ -1,4 +1,6 @@
 import {Args, Command, Flags} from '@oclif/core'
+import type { Brewery } from '../../components/brewery-table.js'
+import { renderBreweries } from '../../components/brewery-table.js'
 
 export default class BreweryList extends Command {
   static override args = {
@@ -26,9 +28,7 @@ export default class BreweryList extends Command {
     }
     
     const breweryResult = await fetch(url.toString())
-    const breweries : [any] = await breweryResult.json()
-    breweries.forEach(brewery => {
-      this.log(`${brewery.name}\t${brewery.city}\t${brewery.state_province}\t${brewery.brewery_type}`)
-    })
+    const breweries : Array<Brewery> = await breweryResult.json()
+    renderBreweries(breweries)
   }
 }
