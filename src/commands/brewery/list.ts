@@ -18,17 +18,24 @@ export default class BreweryList extends Command {
   public async run(): Promise<void> {
     const {flags} = await this.parse(BreweryList)
 
-    const url = new URL('https://api.openbrewerydb.org/v1/breweries')
-    url.searchParams.append('per_page', '50')
-    if (flags.city) {
-      url.searchParams.append('by_city', flags.city)
+    const getBreweries = async (city?: string, name?: string) => {
+      const url = new URL('https://api.openbrewerydb.org/v1/breweries')
+      url.searchParams.append('per_page', '25')
+      if (city && city.length > 2) {
+        url.searchParams.append('by_city', city)
+      }
+      if (name && name.length > 2) {
+        url.searchParams.append('by_name', name)
+      }
+      
+      const breweryResult = await fetch(url.toString())
+      const breweries : Array<Brewery> = await breweryResult.json()
+      return breweries
     }
-    if (flags.name) {
-      url.searchParams.append('by_name', flags.name)
-    }
-    
-    const breweryResult = await fetch(url.toString())
-    const breweries : Array<Brewery> = await breweryResult.json()
-    renderBreweries(breweries)
+    renderBreweries({ 
+      defaultCity: flags.city,
+      defaultName: flags.name,
+      getBreweries
+    })
   }
 }

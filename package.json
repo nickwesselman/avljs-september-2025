@@ -12,6 +12,7 @@
     "@oclif/plugin-help": "^6",
     "@oclif/plugin-plugins": "^5",
     "ink": "^6.3.0",
+    "ink-text-input": "^6.0.0",
     "react": "^19.1.1",
     "react-devtools-core": "^6.1.5"
   },
