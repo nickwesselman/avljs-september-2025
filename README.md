@@ -20,7 +20,7 @@ $ npm install -g avljs
 $ avljs COMMAND
 running command...
 $ avljs (--version)
-avljs/0.0.0 win32-x64 node-v20.14.0
+avljs/0.0.0 win32-x64 node-v22.19.0
 $ avljs --help [COMMAND]
 USAGE
   $ avljs COMMAND
@@ -29,9 +29,11 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`avljs brewery list`](#avljs-brewery-list)
 * [`avljs hello PERSON`](#avljs-hello-person)
 * [`avljs hello world`](#avljs-hello-world)
 * [`avljs help [COMMAND]`](#avljs-help-command)
+* [`avljs iss`](#avljs-iss)
 * [`avljs plugins`](#avljs-plugins)
 * [`avljs plugins add PLUGIN`](#avljs-plugins-add-plugin)
 * [`avljs plugins:inspect PLUGIN...`](#avljs-pluginsinspect-plugin)
@@ -42,6 +44,27 @@ USAGE
 * [`avljs plugins uninstall [PLUGIN]`](#avljs-plugins-uninstall-plugin)
 * [`avljs plugins unlink [PLUGIN]`](#avljs-plugins-unlink-plugin)
 * [`avljs plugins update`](#avljs-plugins-update)
+
+## `avljs brewery list`
+
+List out breweries
+
+```
+USAGE
+  $ avljs brewery list [-n <value>] [--city <value>]
+
+FLAGS
+  -n, --name=<value>  search by name
+      --city=<value>  search by city
+
+DESCRIPTION
+  List out breweries
+
+EXAMPLES
+  $ avljs brewery list
+```
+
+_See code: [src/commands/brewery/list.ts](https://github.com/source/avljs/blob/v0.0.0/src/commands/brewery/list.ts)_
 
 ## `avljs hello PERSON`
 
@@ -103,7 +126,21 @@ DESCRIPTION
   Display help for avljs.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.32/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.2.33/src/commands/help.ts)_
+
+## `avljs iss`
+
+print the current location of the ISS
+
+```
+USAGE
+  $ avljs iss
+
+DESCRIPTION
+  print the current location of the ISS
+```
+
+_See code: [src/commands/iss.ts](https://github.com/source/avljs/blob/v0.0.0/src/commands/iss.ts)_
 
 ## `avljs plugins`
 
@@ -126,7 +163,7 @@ EXAMPLES
   $ avljs plugins
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/index.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/index.ts)_
 
 ## `avljs plugins add PLUGIN`
 
@@ -200,7 +237,7 @@ EXAMPLES
   $ avljs plugins inspect myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/inspect.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/inspect.ts)_
 
 ## `avljs plugins install PLUGIN`
 
@@ -249,7 +286,7 @@ EXAMPLES
     $ avljs plugins install someuser/someplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/install.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/install.ts)_
 
 ## `avljs plugins link PATH`
 
@@ -280,7 +317,7 @@ EXAMPLES
   $ avljs plugins link myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/link.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/link.ts)_
 
 ## `avljs plugins remove [PLUGIN]`
 
@@ -321,7 +358,7 @@ FLAGS
   --reinstall  Reinstall all plugins after uninstalling.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/reset.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/reset.ts)_
 
 ## `avljs plugins uninstall [PLUGIN]`
 
@@ -349,7 +386,7 @@ EXAMPLES
   $ avljs plugins uninstall myplugin
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/uninstall.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/uninstall.ts)_
 
 ## `avljs plugins unlink [PLUGIN]`
 
@@ -393,5 +430,5 @@ DESCRIPTION
   Update installed plugins.
 ```
 
-_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.46/src/commands/plugins/update.ts)_
+_See code: [@oclif/plugin-plugins](https://github.com/oclif/plugin-plugins/blob/v5.4.47/src/commands/plugins/update.ts)_
 <!-- commandsstop -->
